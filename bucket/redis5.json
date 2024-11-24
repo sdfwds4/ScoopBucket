@@ -10,7 +10,7 @@
         }
     },
     "post_install": "sc.exe create Redis5.0 binpath=\"$dir\\redis-server.exe --service-run redis.windows-service.conf --loglevel verbose\" start= auto && sc.exe start Redis5.0",
-    "pre_uninstall": "sc.exe delete Redis5.0",
+    "pre_uninstall": "sc.exe stop Redis5.0 & sc.exe delete Redis5.0",
     "bin": [
         "redis-benchmark.exe",
         "redis-cli.exe",
