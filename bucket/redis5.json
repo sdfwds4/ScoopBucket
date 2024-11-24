@@ -1,0 +1,19 @@
+{
+    "version": "5.0.14.1",
+    "description": "In-memory data structure store, used as a database, cache and message broker",
+    "homepage": "https://redis.io",
+    "license": "BSD-3-Clause",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/tporadowski/redis/releases/download/v5.0.14.1/Redis-x64-5.0.14.1.zip",
+            "hash": "sha1:d41b1e70b3d966d77ab579bcff9daba03c353c87"
+        }
+    },
+    "post_install": "sc.exe create Redis5.0 binpath=\"$dir\\redis-server.exe --service-run redis.windows-service.conf --loglevel verbose\" start= auto && sc.exe start Redis5.0",
+    "post_uninstall": "sc.exe delete Redis5.0",
+    "bin": [
+        "redis-benchmark.exe",
+        "redis-cli.exe",
+        "redis-server.exe"
+    ]
+}
