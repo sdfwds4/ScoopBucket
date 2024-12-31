@@ -1,0 +1,7 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Classes\*\shell\Open With &EmEditor]
+"Icon"="$appdir"
+
+[HKEY_CURRENT_USER\Software\Classes\*\shell\Open With &EmEditor\command]
+@="\"$appdir\" \"%1\""
